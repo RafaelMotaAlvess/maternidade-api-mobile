@@ -1,0 +1,148 @@
+### Mãe Routes
+
+# Get a mãe by ID
+GET http://localhost:3333/api/maes/1
+Accept: application/json
+
+
+###
+
+# Get all mães
+GET http://localhost:3333/api/maes?offset=0&limit=10
+Accept: application/json
+
+###
+
+# Create a new mãe
+POST http://localhost:3333/api/maes
+Content-Type: application/json
+
+{
+  "nome": "Maria da Silva",
+  "cep": "12345-678",
+  "logradouro": "Rua Exemplo",
+  "numero": "123",
+  "bairro": "Centro",
+  "cidade": "Cidade Exemplo",
+  "fixo": "1234-5678",
+  "celular": "98765-4321",
+  "comercial": "2345-6789",
+  "data_nascimento": "1990-01-01"
+}
+
+###
+
+# Update a mãe by ID
+PUT http://localhost:3333/api/maes/{mae_id}
+Content-Type: application/json
+
+{
+  "nome": "Maria da Silva Atualizada",
+  "cep": "87654-321",
+  "logradouro": "Rua Atualizada",
+  "numero": "456",
+  "bairro": "Centro Atualizado",
+  "cidade": "Cidade Atualizada",
+  "fixo": "8765-4321",
+  "celular": "12345-6789",
+  "comercial": "3456-7890",
+  "data_nascimento": "1990-01-02"
+}
+
+###
+
+# Delete a mãe by ID
+DELETE http://localhost:3333/api/maes/{mae_id}
+Accept: application/json
+
+
+### Médico Routes
+
+# Get a médico by CRM
+GET http://localhost:3333/api/medicos/{medico_crm}
+Accept: application/json
+
+###
+
+# Get all médicos
+GET http://localhost:3333/api/medicos?offset=0&limit=10
+Accept: application/json
+
+###
+
+# Create a new médico
+POST http://localhost:3333/api/medicos
+Content-Type: application/json
+
+{
+  "nome": "Dr. João",
+  "especialidade": "Pediatria",
+  "celular": "98765-4321"
+}
+
+###
+
+# Update a médico by CRM
+PUT http://localhost:3333/api/medicos/{medico_crm}
+Content-Type: application/json
+
+{
+  "nome": "Dr. João Atualizado",
+  "especialidade": "Cardiologia",
+  "celular": "12345-6789"
+}
+
+###
+
+# Delete a médico by CRM
+DELETE http://localhost:3333/api/medicos/{medico_crm}
+Accept: application/json
+
+
+### Bebê Routes
+
+# Get a bebê by ID
+GET http://localhost:3333/api/bebes/{bebe_id}
+Accept: application/json
+
+###
+
+# Get all bebês
+GET http://localhost:3333/api/bebes?offset=0&limit=10
+Accept: application/json
+
+###
+
+# Create a new bebê
+POST http://localhost:3333/api/bebes
+Content-Type: application/json
+
+{
+  "crm_medico": "123456",
+  "id_mae": 1,
+  "nome": "Bebê Exemplo",
+  "data_nascimento": "2022-01-01",
+  "peso": 3.5,
+  "altura": 50
+}
+
+###
+
+# Update a bebê by ID
+PUT http://localhost:3333/api/bebes/{bebe_id}
+Content-Type: application/json
+
+{
+  "crm_medico": "654321",
+  "id_mae": 2,
+  "nome": "Bebê Exemplo Atualizado",
+  "data_nascimento": "2022-01-02",
+  "peso": 3.8,
+  "altura": 52
+}
+
+###
+
+# Delete a bebê by ID
+DELETE http://localhost:3333/api/bebes/{bebe_id}
+Accept: application/json
